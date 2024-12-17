@@ -1,6 +1,6 @@
 const express = require('express');
-// const { protect } = require('../middleware/authMiddleware'); // Authentication middleware
-const { getUserProfile, updateUserProfile,createUserProfile} = require('../controllers/userController'); // Import controller functions
+const { protect } = require('../middleware/authMiddleware'); // Authentication middleware
+const { getUserProfile, updateUserProfile,createUserProfile, login} = require('../controllers/userController'); // Import controller functions
 const limiter = require('../middleware/rateLimit');
 
 const router = express.Router();
@@ -8,7 +8,10 @@ const router = express.Router();
 router.post('/register', limiter, createUserProfile);
 
 // Route to get user profile
-router.get('/get-users',  getUserProfile);
+router.get('/get-users',  limiter,protect,getUserProfile);
+
+//Route to login user
+router.post('/login', limiter,login);
 
 // Route to update user profile
 router.put('/me',  updateUserProfile);
