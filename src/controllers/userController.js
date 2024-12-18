@@ -2,7 +2,6 @@ const User = require('../models/userModel');
 const { generateTokenAndSetCookie } = require('../utils/jwt');
 const bcrypt = require('bcrypt');
 
-
 //Create a user profile
 const createUserProfile = async (req, res) => {
   try {
@@ -58,11 +57,13 @@ const getUserProfile = async (req, res) => {
 };
 
 const login = async (req, res) => {
+  console.log("req.body",req.body)
   const { email, password } = req.body;
 
   try {
+    console.log("here",email,password)
       const user = await User.findOne({ email });
-
+      console.log("user",user)
       if (!user) {
           return res.status(400).json({ success: false, message: "Invalid credentials" });
       }
@@ -73,7 +74,8 @@ const login = async (req, res) => {
       }
       const verificationToken = Math.floor(100000 + Math.random() * 900000).toString();
 
-      generateTokenAndSetCookie(res, user._id);
+      const token =  generateTokenAndSetCookie(res, user._id);
+      console.log("token",token)
       user.lastlogin = Date.now();
       user.verificationToken = verificationToken;
       user.verificationTokenExpiresAt = Date.now() + 24 * 60 * 60 * 1000 // 24 hours
@@ -94,10 +96,10 @@ const login = async (req, res) => {
   }
 }
 
-// export const logout = async (req, res) => {
-//   res.clearCookie("token");
-//   res.status(200).json({ success: true, message: "Logged out successfully" });
-// }
+const logout = async (req, res) => {
+  res.clearCookie("token");
+  res.status(200).json({ success: true, message: "Logged out successfully" });
+}
 
 // Update user profile
 const updateUserProfile = async (req, res) => {
@@ -121,4 +123,4 @@ const updateUserProfile = async (req, res) => {
   }
 };
 
-module.exports = { getUserProfile, updateUserProfile, createUserProfile,login };
+module.exports = { getUserProfile, updateUserProfile, createUserProfile,login,logout };
