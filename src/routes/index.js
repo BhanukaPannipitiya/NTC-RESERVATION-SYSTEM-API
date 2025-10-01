@@ -1,11 +1,17 @@
 const express = require('express');
 const userRoutes = require('./userRoutes');
-const reservationRoutes = require('./reservationRoutes');
+const routeRoutes = require('./routeRoutes');
+const busRoutes = require('./busRoutes');
+const tripRoutes = require('./tripRoutes');
+const locationRoutes = require('./locationRoutes');
 
 const router = express.Router();
 
 // Mount route modules
 router.use('/users', userRoutes);
-// router.use('/reservations', reservationRoutes);
+router.use('/routes', routeRoutes);
+router.use('/buses', busRoutes);
+router.use('/trips', tripRoutes);
+router.use('/locations', locationRoutes);
 
 module.exports = router;

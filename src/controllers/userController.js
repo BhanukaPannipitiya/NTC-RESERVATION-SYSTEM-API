@@ -35,7 +35,7 @@ const createUserProfile = async (req, res) => {
       name: user.name,
       email: user.email,
       role: user.role,
-      token: generateTokenAndSetCookie(res, user._id),
+      token: generateTokenAndSetCookie(res, { id: user._id, role: user.role }),
     });
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -45,6 +45,7 @@ const createUserProfile = async (req, res) => {
 // Get user profile
 const getUserProfile = async (req, res) => {
   const { id } = req.body;
+  console.log("object")
   try {
     const user = await User.findById(id).select('-password'); // Exclude password field
     if (!user) {
@@ -74,7 +75,7 @@ const login = async (req, res) => {
       }
       const verificationToken = Math.floor(100000 + Math.random() * 900000).toString();
 
-      const token =  generateTokenAndSetCookie(res, user._id);
+      const token =  generateTokenAndSetCookie(res, { id: user._id, role: user.role });
       console.log("token",token)
       user.lastlogin = Date.now();
       user.verificationToken = verificationToken;
