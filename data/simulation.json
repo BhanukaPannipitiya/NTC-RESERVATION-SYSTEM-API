@@ -1,0 +1,600 @@
+{
+  "routes": [
+    {
+      "id": 1,
+      "name": "Colombo to Kandy",
+      "startLocation": "Colombo",
+      "endLocation": "Kandy",
+      "distance": 115,
+      "province": "Western to Central",
+      "status": "active",
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T00:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "name": "Colombo to Galle",
+      "startLocation": "Colombo",
+      "endLocation": "Galle",
+      "distance": 116,
+      "province": "Western to Southern",
+      "status": "active",
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T00:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "name": "Colombo to Anuradhapura",
+      "startLocation": "Colombo",
+      "endLocation": "Anuradhapura",
+      "distance": 206,
+      "province": "Western to North Central",
+      "status": "active",
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T00:00:00.000Z"
+    },
+    {
+      "id": 4,
+      "name": "Colombo to Jaffna",
+      "startLocation": "Colombo",
+      "endLocation": "Jaffna",
+      "distance": 396,
+      "province": "Western to Northern",
+      "status": "active",
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T00:00:00.000Z"
+    },
+    {
+      "id": 5,
+      "name": "Colombo to Trincomalee",
+      "startLocation": "Colombo",
+      "endLocation": "Trincomalee",
+      "distance": 257,
+      "province": "Western to Eastern",
+      "status": "active",
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T00:00:00.000Z"
+    }
+  ],
+  "buses": [
+    {
+      "id": 1,
+      "registrationNumber": "WP-1234",
+      "routeId": 1,
+      "operator": "Sri Lanka Transport Board",
+      "capacity": 50,
+      "status": "active",
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T00:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "registrationNumber": "WP-5678",
+      "routeId": 1,
+      "operator": "Private Transport Co.",
+      "capacity": 45,
+      "status": "active",
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T00:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "registrationNumber": "WP-9012",
+      "routeId": 2,
+      "operator": "Sri Lanka Transport Board",
+      "capacity": 50,
+      "status": "active",
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T00:00:00.000Z"
+    },
+    {
+      "id": 4,
+      "registrationNumber": "WP-3456",
+      "routeId": 2,
+      "operator": "Private Transport Co.",
+      "capacity": 45,
+      "status": "active",
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T00:00:00.000Z"
+    },
+    {
+      "id": 5,
+      "registrationNumber": "WP-7890",
+      "routeId": 3,
+      "operator": "Sri Lanka Transport Board",
+      "capacity": 50,
+      "status": "active",
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T00:00:00.000Z"
+    },
+    {
+      "id": 6,
+      "registrationNumber": "WP-2468",
+      "routeId": 3,
+      "operator": "Private Transport Co.",
+      "capacity": 45,
+      "status": "active",
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T00:00:00.000Z"
+    },
+    {
+      "id": 7,
+      "registrationNumber": "WP-1357",
+      "routeId": 4,
+      "operator": "Sri Lanka Transport Board",
+      "capacity": 50,
+      "status": "active",
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T00:00:00.000Z"
+    },
+    {
+      "id": 8,
+      "registrationNumber": "WP-9753",
+      "routeId": 4,
+      "operator": "Private Transport Co.",
+      "capacity": 45,
+      "status": "active",
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T00:00:00.000Z"
+    },
+    {
+      "id": 9,
+      "registrationNumber": "WP-8642",
+      "routeId": 5,
+      "operator": "Sri Lanka Transport Board",
+      "capacity": 50,
+      "status": "active",
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T00:00:00.000Z"
+    },
+    {
+      "id": 10,
+      "registrationNumber": "WP-1928",
+      "routeId": 5,
+      "operator": "Private Transport Co.",
+      "capacity": 45,
+      "status": "active",
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T00:00:00.000Z"
+    },
+    {
+      "id": 11,
+      "registrationNumber": "WP-5555",
+      "routeId": 1,
+      "operator": "Sri Lanka Transport Board",
+      "capacity": 50,
+      "status": "active",
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T00:00:00.000Z"
+    },
+    {
+      "id": 12,
+      "registrationNumber": "WP-6666",
+      "routeId": 1,
+      "operator": "Private Transport Co.",
+      "capacity": 45,
+      "status": "active",
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T00:00:00.000Z"
+    },
+    {
+      "id": 13,
+      "registrationNumber": "WP-7777",
+      "routeId": 2,
+      "operator": "Sri Lanka Transport Board",
+      "capacity": 50,
+      "status": "active",
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T00:00:00.000Z"
+    },
+    {
+      "id": 14,
+      "registrationNumber": "WP-8888",
+      "routeId": 2,
+      "operator": "Private Transport Co.",
+      "capacity": 45,
+      "status": "active",
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T00:00:00.000Z"
+    },
+    {
+      "id": 15,
+      "registrationNumber": "WP-9999",
+      "routeId": 3,
+      "operator": "Sri Lanka Transport Board",
+      "capacity": 50,
+      "status": "active",
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T00:00:00.000Z"
+    },
+    {
+      "id": 16,
+      "registrationNumber": "WP-0000",
+      "routeId": 3,
+      "operator": "Private Transport Co.",
+      "capacity": 45,
+      "status": "active",
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T00:00:00.000Z"
+    },
+    {
+      "id": 17,
+      "registrationNumber": "WP-1111",
+      "routeId": 4,
+      "operator": "Sri Lanka Transport Board",
+      "capacity": 50,
+      "status": "active",
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T00:00:00.000Z"
+    },
+    {
+      "id": 18,
+      "registrationNumber": "WP-2222",
+      "routeId": 4,
+      "operator": "Private Transport Co.",
+      "capacity": 45,
+      "status": "active",
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T00:00:00.000Z"
+    },
+    {
+      "id": 19,
+      "registrationNumber": "WP-3333",
+      "routeId": 5,
+      "operator": "Sri Lanka Transport Board",
+      "capacity": 50,
+      "status": "active",
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T00:00:00.000Z"
+    },
+    {
+      "id": 20,
+      "registrationNumber": "WP-4444",
+      "routeId": 5,
+      "operator": "Private Transport Co.",
+      "capacity": 45,
+      "status": "active",
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T00:00:00.000Z"
+    },
+    {
+      "id": 21,
+      "registrationNumber": "WP-5556",
+      "routeId": 1,
+      "operator": "Sri Lanka Transport Board",
+      "capacity": 50,
+      "status": "active",
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T00:00:00.000Z"
+    },
+    {
+      "id": 22,
+      "registrationNumber": "WP-6667",
+      "routeId": 1,
+      "operator": "Private Transport Co.",
+      "capacity": 45,
+      "status": "active",
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T00:00:00.000Z"
+    },
+    {
+      "id": 23,
+      "registrationNumber": "WP-7778",
+      "routeId": 2,
+      "operator": "Sri Lanka Transport Board",
+      "capacity": 50,
+      "status": "active",
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T00:00:00.000Z"
+    },
+    {
+      "id": 24,
+      "registrationNumber": "WP-8889",
+      "routeId": 2,
+      "operator": "Private Transport Co.",
+      "capacity": 45,
+      "status": "active",
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T00:00:00.000Z"
+    },
+    {
+      "id": 25,
+      "registrationNumber": "WP-9990",
+      "routeId": 3,
+      "operator": "Sri Lanka Transport Board",
+      "capacity": 50,
+      "status": "active",
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T00:00:00.000Z"
+    }
+  ],
+  "trips": [
+    {
+      "id": 1,
+      "routeId": 1,
+      "busId": 1,
+      "startTime": "2025-10-02T06:00:00.000Z",
+      "endTime": "2025-10-02T08:30:00.000Z",
+      "status": "completed",
+      "passengerCount": 45,
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T00:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "routeId": 1,
+      "busId": 2,
+      "startTime": "2025-10-02T08:00:00.000Z",
+      "endTime": "2025-10-02T10:30:00.000Z",
+      "status": "completed",
+      "passengerCount": 42,
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T00:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "routeId": 2,
+      "busId": 3,
+      "startTime": "2025-10-02T07:00:00.000Z",
+      "endTime": "2025-10-02T09:30:00.000Z",
+      "status": "completed",
+      "passengerCount": 48,
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T00:00:00.000Z"
+    },
+    {
+      "id": 4,
+      "routeId": 2,
+      "busId": 4,
+      "startTime": "2025-10-02T09:00:00.000Z",
+      "endTime": "2025-10-02T11:30:00.000Z",
+      "status": "completed",
+      "passengerCount": 44,
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T00:00:00.000Z"
+    },
+    {
+      "id": 5,
+      "routeId": 3,
+      "busId": 5,
+      "startTime": "2025-10-02T06:30:00.000Z",
+      "endTime": "2025-10-02T10:00:00.000Z",
+      "status": "completed",
+      "passengerCount": 47,
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T00:00:00.000Z"
+    },
+    {
+      "id": 6,
+      "routeId": 3,
+      "busId": 6,
+      "startTime": "2025-10-02T08:30:00.000Z",
+      "endTime": "2025-10-02T12:00:00.000Z",
+      "status": "completed",
+      "passengerCount": 43,
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T00:00:00.000Z"
+    },
+    {
+      "id": 7,
+      "routeId": 4,
+      "busId": 7,
+      "startTime": "2025-10-02T05:00:00.000Z",
+      "endTime": "2025-10-02T11:00:00.000Z",
+      "status": "completed",
+      "passengerCount": 49,
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T00:00:00.000Z"
+    },
+    {
+      "id": 8,
+      "routeId": 4,
+      "busId": 8,
+      "startTime": "2025-10-02T07:00:00.000Z",
+      "endTime": "2025-10-02T13:00:00.000Z",
+      "status": "completed",
+      "passengerCount": 45,
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T00:00:00.000Z"
+    },
+    {
+      "id": 9,
+      "routeId": 5,
+      "busId": 9,
+      "startTime": "2025-10-02T06:00:00.000Z",
+      "endTime": "2025-10-02T10:30:00.000Z",
+      "status": "completed",
+      "passengerCount": 48,
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T00:00:00.000Z"
+    },
+    {
+      "id": 10,
+      "routeId": 5,
+      "busId": 10,
+      "startTime": "2025-10-02T08:00:00.000Z",
+      "endTime": "2025-10-02T12:30:00.000Z",
+      "status": "completed",
+      "passengerCount": 44,
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T00:00:00.000Z"
+    },
+    {
+      "id": 11,
+      "routeId": 1,
+      "busId": 11,
+      "startTime": "2025-10-02T10:00:00.000Z",
+      "endTime": "2025-10-02T12:30:00.000Z",
+      "status": "running",
+      "passengerCount": 44,
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T16:06:19.592Z",
+      "currentLat": 7.2904489052113925,
+      "currentLng": 80.63331345915213
+    },
+    {
+      "id": 12,
+      "routeId": 1,
+      "busId": 12,
+      "startTime": "2025-10-02T12:00:00.000Z",
+      "endTime": "2025-10-02T14:30:00.000Z",
+      "status": "running",
+      "passengerCount": 13,
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T16:06:19.594Z",
+      "currentLat": 7.290574759558841,
+      "currentLng": 80.63356050040466
+    },
+    {
+      "id": 13,
+      "routeId": 2,
+      "busId": 13,
+      "startTime": "2025-10-02T11:00:00.000Z",
+      "endTime": "2025-10-02T13:30:00.000Z",
+      "status": "running",
+      "passengerCount": 33,
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T16:06:19.594Z",
+      "currentLat": 6.032564931802549,
+      "currentLng": 80.2171354141311
+    },
+    {
+      "id": 14,
+      "routeId": 2,
+      "busId": 14,
+      "startTime": "2025-10-02T13:00:00.000Z",
+      "endTime": "2025-10-02T15:30:00.000Z",
+      "status": "running",
+      "passengerCount": 43,
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T16:06:19.595Z",
+      "currentLat": 6.033183367382002,
+      "currentLng": 80.21730060028152
+    },
+    {
+      "id": 15,
+      "routeId": 3,
+      "busId": 15,
+      "startTime": "2025-10-02T10:30:00.000Z",
+      "endTime": "2025-10-02T14:00:00.000Z",
+      "status": "running",
+      "passengerCount": 50,
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T16:06:19.595Z",
+      "currentLat": 5.9485485477410895,
+      "currentLng": 80.54900703210481
+    },
+    {
+      "id": 16,
+      "routeId": 3,
+      "busId": 16,
+      "startTime": "2025-10-02T12:30:00.000Z",
+      "endTime": "2025-10-02T16:00:00.000Z",
+      "status": "running",
+      "passengerCount": 20,
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T16:06:19.595Z",
+      "currentLat": 5.948809540103314,
+      "currentLng": 80.54974538060634
+    },
+    {
+      "id": 17,
+      "routeId": 4,
+      "busId": 17,
+      "startTime": "2025-10-02T09:00:00.000Z",
+      "endTime": "2025-10-02T15:00:00.000Z",
+      "status": "running",
+      "passengerCount": 29,
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T16:06:19.596Z",
+      "currentLat": 8.31181349122579,
+      "currentLng": 80.40343315096104
+    },
+    {
+      "id": 18,
+      "routeId": 4,
+      "busId": 18,
+      "startTime": "2025-10-02T11:00:00.000Z",
+      "endTime": "2025-10-02T17:00:00.000Z",
+      "status": "running",
+      "passengerCount": 8,
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T16:06:19.596Z",
+      "currentLat": 8.105027396208888,
+      "currentLng": 80.3227383413518
+    },
+    {
+      "id": 19,
+      "routeId": 5,
+      "busId": 19,
+      "startTime": "2025-10-02T10:00:00.000Z",
+      "endTime": "2025-10-02T14:30:00.000Z",
+      "status": "running",
+      "passengerCount": 38,
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T16:06:19.597Z",
+      "currentLat": 7.2973398407412935,
+      "currentLng": 81.6820540837221
+    },
+    {
+      "id": 20,
+      "routeId": 5,
+      "busId": 20,
+      "startTime": "2025-10-02T12:00:00.000Z",
+      "endTime": "2025-10-02T16:30:00.000Z",
+      "status": "running",
+      "passengerCount": 29,
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T16:06:19.598Z",
+      "currentLat": 7.26462279825808,
+      "currentLng": 81.52195518785794
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "ntc_admin",
+      "password": "$2b$10$Ju4Nfs7iqe./V4b5AFCAl.ue87Z3RS4XBm9sFF/LjFT2sM2rq/qOS",
+      "role": "NTC",
+      "email": "admin@ntc.lk",
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T00:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "username": "operator1",
+      "password": "$2b$10$Ju4Nfs7iqe./V4b5AFCAl.ue87Z3RS4XBm9sFF/LjFT2sM2rq/qOS",
+      "role": "Operator",
+      "email": "operator1@transport.lk",
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T00:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "username": "operator2",
+      "password": "$2b$10$Ju4Nfs7iqe./V4b5AFCAl.ue87Z3RS4XBm9sFF/LjFT2sM2rq/qOS",
+      "role": "Operator",
+      "email": "operator2@transport.lk",
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T00:00:00.000Z"
+    },
+    {
+      "id": 4,
+      "username": "commuter1",
+      "password": "$2b$10$Ju4Nfs7iqe./V4b5AFCAl.ue87Z3RS4XBm9sFF/LjFT2sM2rq/qOS",
+      "role": "Commuter",
+      "email": "commuter1@email.com",
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T00:00:00.000Z"
+    },
+    {
+      "id": 5,
+      "username": "commuter2",
+      "password": "$2b$10$Ju4Nfs7iqe./V4b5AFCAl.ue87Z3RS4XBm9sFF/LjFT2sM2rq/qOS",
+      "role": "Commuter",
+      "email": "commuter2@email.com",
+      "createdAt": "2025-10-02T00:00:00.000Z",
+      "updatedAt": "2025-10-02T00:00:00.000Z"
+    }
+  ]
+}
