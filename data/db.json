@@ -426,11 +426,11 @@
       "startTime": "2025-10-02T10:00:00.000Z",
       "endTime": "2025-10-02T12:30:00.000Z",
       "status": "running",
-      "passengerCount": 48,
+      "passengerCount": 47,
       "createdAt": "2025-10-02T00:00:00.000Z",
-      "updatedAt": "2025-10-02T16:05:30.192Z",
-      "currentLat": 7.290488367413505,
-      "currentLng": 80.6338084553524
+      "updatedAt": "2025-10-02T16:07:30.247Z",
+      "currentLat": 7.290551035829976,
+      "currentLng": 80.63414051050995
     },
     {
       "id": 12,
@@ -439,11 +439,11 @@
       "startTime": "2025-10-02T12:00:00.000Z",
       "endTime": "2025-10-02T14:30:00.000Z",
       "status": "running",
-      "passengerCount": 33,
+      "passengerCount": 35,
       "createdAt": "2025-10-02T00:00:00.000Z",
-      "updatedAt": "2025-10-02T16:05:30.194Z",
-      "currentLat": 7.2903030079482525,
-      "currentLng": 80.6335518248613
+      "updatedAt": "2025-10-02T16:07:30.252Z",
+      "currentLat": 7.290883651704711,
+      "currentLng": 80.63383651962934
     },
     {
       "id": 13,
@@ -452,11 +452,11 @@
       "startTime": "2025-10-02T11:00:00.000Z",
       "endTime": "2025-10-02T13:30:00.000Z",
       "status": "running",
-      "passengerCount": 34,
+      "passengerCount": 33,
       "createdAt": "2025-10-02T00:00:00.000Z",
-      "updatedAt": "2025-10-02T16:05:30.194Z",
-      "currentLat": 6.0325020443565105,
-      "currentLng": 80.21670481780268
+      "updatedAt": "2025-10-02T16:07:30.253Z",
+      "currentLat": 6.032730067318029,
+      "currentLng": 80.2170890663256
     },
     {
       "id": 14,
@@ -465,11 +465,11 @@
       "startTime": "2025-10-02T13:00:00.000Z",
       "endTime": "2025-10-02T15:30:00.000Z",
       "status": "running",
-      "passengerCount": 11,
+      "passengerCount": 13,
       "createdAt": "2025-10-02T00:00:00.000Z",
-      "updatedAt": "2025-10-02T16:05:30.195Z",
-      "currentLat": 6.033325781320056,
-      "currentLng": 80.21679856955336
+      "updatedAt": "2025-10-02T16:07:30.255Z",
+      "currentLat": 6.032571258447205,
+      "currentLng": 80.21690080952544
     },
     {
       "id": 15,
@@ -480,9 +480,9 @@
       "status": "running",
       "passengerCount": 38,
       "createdAt": "2025-10-02T00:00:00.000Z",
-      "updatedAt": "2025-10-02T16:05:30.195Z",
-      "currentLat": 5.948061978416584,
-      "currentLng": 80.54947523997228
+      "updatedAt": "2025-10-02T16:07:30.266Z",
+      "currentLat": 5.948529713385447,
+      "currentLng": 80.54970291590537
     },
     {
       "id": 16,
@@ -491,11 +491,11 @@
       "startTime": "2025-10-02T12:30:00.000Z",
       "endTime": "2025-10-02T16:00:00.000Z",
       "status": "running",
-      "passengerCount": 13,
+      "passengerCount": 10,
       "createdAt": "2025-10-02T00:00:00.000Z",
-      "updatedAt": "2025-10-02T16:05:30.196Z",
-      "currentLat": 5.948099687469479,
-      "currentLng": 80.54893303322547
+      "updatedAt": "2025-10-02T16:07:30.268Z",
+      "currentLat": 5.948749032644,
+      "currentLng": 80.54959865825997
     },
     {
       "id": 17,
@@ -506,9 +506,9 @@
       "status": "running",
       "passengerCount": 34,
       "createdAt": "2025-10-02T00:00:00.000Z",
-      "updatedAt": "2025-10-02T16:05:30.197Z",
-      "currentLat": 8.311059207643039,
-      "currentLng": 80.40411326526265
+      "updatedAt": "2025-10-02T16:07:30.270Z",
+      "currentLat": 8.311357100466925,
+      "currentLng": 80.4034499580764
     },
     {
       "id": 18,
@@ -519,9 +519,9 @@
       "status": "running",
       "passengerCount": 37,
       "createdAt": "2025-10-02T00:00:00.000Z",
-      "updatedAt": "2025-10-02T16:05:30.197Z",
-      "currentLat": 8.101590929617998,
-      "currentLng": 80.32202610547581
+      "updatedAt": "2025-10-02T16:07:30.271Z",
+      "currentLat": 8.109048213429965,
+      "currentLng": 80.32425670237023
     },
     {
       "id": 19,
@@ -530,11 +530,11 @@
       "startTime": "2025-10-02T10:00:00.000Z",
       "endTime": "2025-10-02T14:30:00.000Z",
       "status": "running",
-      "passengerCount": 36,
+      "passengerCount": 37,
       "createdAt": "2025-10-02T00:00:00.000Z",
-      "updatedAt": "2025-10-02T16:05:30.198Z",
-      "currentLat": 7.297076295956254,
-      "currentLng": 81.68189432552904
+      "updatedAt": "2025-10-02T16:07:30.272Z",
+      "currentLat": 7.297911165417127,
+      "currentLng": 81.6822855777009
     },
     {
       "id": 20,
@@ -543,11 +543,11 @@
       "startTime": "2025-10-02T12:00:00.000Z",
       "endTime": "2025-10-02T16:30:00.000Z",
       "status": "running",
-      "passengerCount": 23,
+      "passengerCount": 24,
       "createdAt": "2025-10-02T00:00:00.000Z",
-      "updatedAt": "2025-10-02T16:05:30.198Z",
-      "currentLat": 7.263883910052826,
-      "currentLng": 81.51680620882644
+      "updatedAt": "2025-10-02T16:07:30.273Z",
+      "currentLat": 7.267134371425654,
+      "currentLng": 81.53054617337278
     }
   ],
   "users": [
