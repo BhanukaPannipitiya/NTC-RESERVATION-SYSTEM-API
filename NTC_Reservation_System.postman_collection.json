@@ -1,0 +1,663 @@
+{
+  "info": {
+    "name": "NTC Reservation System API",
+    "description": "Comprehensive API collection for the NTC Bus Tracking and Reservation System. This collection includes all endpoints for authentication, routes, buses, trips, and location tracking.",
+    "version": "1.0.0",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{authToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000",
+      "type": "string"
+    },
+    {
+      "key": "authToken",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "System",
+      "item": [
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/v1/health",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "health"]
+            },
+            "description": "Check if the API is healthy and operational"
+          },
+          "response": []
+        },
+        {
+          "name": "System Status",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/v1/status",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "status"]
+            },
+            "description": "Get detailed system status including uptime, memory usage, and database statistics"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "User Login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 200) {",
+                  "    const responseJson = pm.response.json();",
+                  "    pm.collectionVariables.set('authToken', responseJson.token);",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"admin\",\n  \"password\": \"password123\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/v1/auth/login",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "auth", "login"]
+            },
+            "description": "Authenticate user and receive JWT token"
+          },
+          "response": []
+        },
+        {
+          "name": "User Registration",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"newuser\",\n  \"password\": \"password123\",\n  \"email\": \"newuser@example.com\",\n  \"role\": \"Commuter\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/v1/auth/register",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "auth", "register"]
+            },
+            "description": "Register a new user account"
+          },
+          "response": []
+        },
+        {
+          "name": "Get User Profile",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/v1/auth/profile/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "auth", "profile", "1"]
+            },
+            "description": "Get user profile by ID (requires authentication)"
+          },
+          "response": []
+        },
+        {
+          "name": "Update User Profile",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"updateduser\",\n  \"email\": \"updated@example.com\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/v1/auth/profile/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "auth", "profile", "1"]
+            },
+            "description": "Update user profile information (requires authentication)"
+          },
+          "response": []
+        },
+        {
+          "name": "Change Password",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"currentPassword\": \"oldpassword123\",\n  \"newPassword\": \"newpassword123\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/v1/auth/change-password",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "auth", "change-password"]
+            },
+            "description": "Change user password (requires authentication)"
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Users (Admin Only)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/v1/auth/users?page=1&limit=10&sort=username:asc",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "auth", "users"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                },
+                {
+                  "key": "sort",
+                  "value": "username:asc"
+                }
+              ]
+            },
+            "description": "Get all users with pagination (NTC role required)"
+          },
+          "response": []
+        },
+        {
+          "name": "Delete User (Admin Only)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/v1/auth/users/2",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "auth", "users", "2"]
+            },
+            "description": "Delete user by ID (NTC role required)"
+          },
+          "response": []
+        },
+        {
+          "name": "Get User Statistics (Admin Only)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/v1/auth/statistics",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "auth", "statistics"]
+            },
+            "description": "Get user statistics and analytics (NTC role required)"
+          },
+          "response": []
+        },
+        {
+          "name": "Validate Token",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/v1/auth/validate",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "auth", "validate"]
+            },
+            "description": "Validate JWT token (requires authentication)"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Routes",
+      "item": [
+        {
+          "name": "Get All Routes",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/v1/routes?page=1&limit=10&sort=name:asc&status=active",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "routes"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                },
+                {
+                  "key": "sort",
+                  "value": "name:asc"
+                },
+                {
+                  "key": "status",
+                  "value": "active"
+                }
+              ]
+            },
+            "description": "Get all bus routes with pagination and filtering"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Route by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/v1/routes/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "routes", "1"]
+            },
+            "description": "Get specific route by ID"
+          },
+          "response": []
+        },
+        {
+          "name": "Create Route (NTC Only)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Colombo to Kandy Express\",\n  \"startLocation\": \"Colombo\",\n  \"endLocation\": \"Kandy\",\n  \"distance\": 115.5,\n  \"province\": \"Central Province\",\n  \"status\": \"active\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/v1/routes",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "routes"]
+            },
+            "description": "Create a new bus route (NTC role required)"
+          },
+          "response": []
+        },
+        {
+          "name": "Update Route (NTC Only)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Colombo to Kandy Express (Updated)\",\n  \"startLocation\": \"Colombo Fort\",\n  \"endLocation\": \"Kandy City\",\n  \"distance\": 120.0,\n  \"province\": \"Central Province\",\n  \"status\": \"active\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/v1/routes/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "routes", "1"]
+            },
+            "description": "Update existing route (NTC role required)"
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Route (NTC Only)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/v1/routes/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "routes", "1"]
+            },
+            "description": "Delete route by ID (NTC role required)"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Buses",
+      "item": [
+        {
+          "name": "Get All Buses",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/v1/buses?page=1&limit=10&sort=number:asc&status=active",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "buses"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                },
+                {
+                  "key": "sort",
+                  "value": "number:asc"
+                },
+                {
+                  "key": "status",
+                  "value": "active"
+                }
+              ]
+            },
+            "description": "Get all buses with pagination and filtering"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Bus by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/v1/buses/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "buses", "1"]
+            },
+            "description": "Get specific bus by ID"
+          },
+          "response": []
+        },
+        {
+          "name": "Create Bus (NTC Only)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"number\": \"CM-KD001\",\n  \"routeId\": 1,\n  \"capacity\": 50,\n  \"status\": \"active\",\n  \"operator\": \"Sri Lanka Transport Board\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/v1/buses",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "buses"]
+            },
+            "description": "Create a new bus (NTC role required)"
+          },
+          "response": []
+        },
+        {
+          "name": "Update Bus (NTC Only)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"number\": \"CM-KD001\",\n  \"routeId\": 1,\n  \"capacity\": 55,\n  \"status\": \"active\",\n  \"operator\": \"Sri Lanka Transport Board (Updated)\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/v1/buses/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "buses", "1"]
+            },
+            "description": "Update existing bus (NTC role required)"
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Bus (NTC Only)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/v1/buses/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "buses", "1"]
+            },
+            "description": "Delete bus by ID (NTC role required)"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Trips",
+      "item": [
+        {
+          "name": "Get All Trips",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/v1/trips?page=1&limit=10&sort=startTime:asc&status=scheduled",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "trips"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                },
+                {
+                  "key": "sort",
+                  "value": "startTime:asc"
+                },
+                {
+                  "key": "status",
+                  "value": "scheduled"
+                }
+              ]
+            },
+            "description": "Get all trips with pagination and filtering"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Running Trips",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/v1/trips/running",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "trips", "running"]
+            },
+            "description": "Get all currently running trips"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Trip by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/v1/trips/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "trips", "1"]
+            },
+            "description": "Get specific trip by ID"
+          },
+          "response": []
+        },
+        {
+          "name": "Create Trip (NTC Only)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"routeId\": 1,\n  \"busId\": 1,\n  \"startTime\": \"2024-01-15T08:00:00.000Z\",\n  \"endTime\": \"2024-01-15T12:00:00.000Z\",\n  \"status\": \"scheduled\",\n  \"currentLat\": 6.9271,\n  \"currentLng\": 79.8612,\n  \"passengerCount\": 0\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/v1/trips",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "trips"]
+            },
+            "description": "Create a new trip (NTC role required)"
+          },
+          "response": []
+        },
+        {
+          "name": "Update Trip (NTC/Operator)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"routeId\": 1,\n  \"busId\": 1,\n  \"startTime\": \"2024-01-15T08:30:00.000Z\",\n  \"endTime\": \"2024-01-15T12:30:00.000Z\",\n  \"status\": \"scheduled\",\n  \"currentLat\": 6.9271,\n  \"currentLng\": 79.8612,\n  \"passengerCount\": 0\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/v1/trips/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "trips", "1"]
+            },
+            "description": "Update existing trip (NTC/Operator role required)"
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Trip (NTC Only)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/v1/trips/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "trips", "1"]
+            },
+            "description": "Delete trip by ID (NTC role required)"
+          },
+          "response": []
+        },
+        {
+          "name": "Start Trip (NTC/Operator)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/v1/trips/1/start",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "trips", "1", "start"]
+            },
+            "description": "Start a scheduled trip (NTC/Operator role required)"
+          },
+          "response": []
+        },
+        {
+          "name": "Complete Trip (NTC/Operator)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/v1/trips/1/complete",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "trips", "1", "complete"]
+            },
+            "description": "Complete a running trip (NTC/Operator role required)"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Locations",
+      "item": [
+        {
+          "name": "Update Trip Location (Operator Only)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"tripId\": 1,\n  \"lat\": 7.2906,\n  \"lng\": 80.6337\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/v1/locations",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "locations"]
+            },
+            "description": "Update real-time location for a running trip (Operator role required)"
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
